@@ -168,16 +168,16 @@
         clientSecret: 'e2d653166c3046dd8741f5c1cacf00c042736687'
       }
     });
-
-    function createCustomPanel() {
-      const iframeUrl = 'https://ninishka.github.io/Test-Task/';
-      Pipedrive.panel.create({
-        name: 'Job Creation Form',
-        description: 'Create jobs directly from Pipedrive',
-        url: iframeUrl,
-        locations: ['deals']
-      });
-    }
+    
+      function createCustomPanel() {
+        const iframeUrl = 'https://test-task-xi-nine.vercel.app/';
+        Pipedrive.panel.create({
+          name: 'Job Creation Form',
+          description: 'Create jobs directly from Pipedrive',
+          url: iframeUrl,
+          locations: ['deals']
+        });
+      }
 
     createCustomPanel();
   </script>
