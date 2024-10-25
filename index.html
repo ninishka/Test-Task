@@ -9,7 +9,6 @@
 
   <button type="button" class="custom-button">Create Job</button>
   <script>
-    // Pipedrive initialization
     Pipedrive.initialize({
       auth: {
         clientId: '302dc9c873b01ca8',
@@ -17,7 +16,6 @@
       }
     });
 
-    // Function to create custom panel
     function createCustomPanel() {
       const iframeUrl = 'https://test-task-xi-nine.vercel.app';
       Pipedrive.panel.create({
@@ -28,15 +26,12 @@
       });
     }
 
-    // Create custom panel when DOM content is loaded
     document.addEventListener('DOMContentLoaded', function() {
       createCustomPanel();
       
-      // Your button event listener here
       const button = document.querySelector('.custom-button');
       button.addEventListener('click', function() {
         console.log('Button clicked!');
-        // Add your form logic here
       });
     });
   </script>
