@@ -8,7 +8,11 @@
 <body>
 
   <button type="button" class="custom-button">Create Job</button>
+  <script src="https://cdn.jsdelivr.net/npm/@pipedrive/pipedrive-js@latest/dist/pipedrive.min.js"></script>
+
   <script>
+    console.log("Pipedrive SDK loaded");
+
     Pipedrive.initialize({
       auth: {
         clientId: '302dc9c873b01ca8',
@@ -19,10 +23,16 @@
     function createCustomPanel() {
       const iframeUrl = 'https://test-task-xi-nine.vercel.app';
       Pipedrive.panel.create({
-        name: 'Job Creation Form',
-        description: 'Create jobs directly from Pipedrive',
-        url: iframeUrl,
-        locations: ['deals']
+      name: 'Job Creation Form',
+      description: 'Create jobs directly from Pipedrive',
+      url: iframeUrl,
+      locations: ['deals']
+      }, function(err, result) {
+        if (err) {
+          console.error("Error creating custom panel:", err);
+        } else {
+          console.log("Custom panel created successfully", result);
+        }
       });
     }
 
